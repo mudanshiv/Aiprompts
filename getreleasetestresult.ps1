@@ -81,7 +81,7 @@ foreach ($release in $latestReleases) {
         $total  = $runData.aggregatedResultsAnalysis.totalTests
         $other  = $total - ($passed + $failed)
         #$total  = $testResults.Count
-        $runSummaryByOutcome = $runData.aggregatedResultsAnalysis.runSummaryByOutcome.psobject.Properties.Value.outcome
+        $runSummaryByOutcome = $runData.aggregatedResultsAnalysis.runSummaryByOutcome.psobject.Properties.Name
 
         $status = if ($failed -gt 0) { "Failed" } elseif ($total -eq 0) { "No Tests" } else { "Passed" }
 
